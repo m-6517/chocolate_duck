@@ -1,6 +1,5 @@
 build:
   docker:
     web: Dockerfile
-  cache:
-    paths:
-      - .heroku
+run:
+  web: bundle exec puma -C config/puma.rb
