@@ -41,4 +41,4 @@
 
 .DS_Store
 /vendor/bundle
-venv/
+venv/node_modules
