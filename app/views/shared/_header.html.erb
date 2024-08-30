@@ -20,9 +20,9 @@
         </button>
       </div>
       <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-        <li><%= link_to 'ずかん', '#' %></li>
-        <li><%= link_to 'マイページ', '#' %></li>
-        <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete } %></li>
+        <li><%= link_to t('header.board'), '#' %></li>
+        <li><%= link_to t('header.profile'), '#' %></li>
+        <li><%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete } %></li>
       </ul>
     </div>
   </div>
