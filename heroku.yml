@@ -11,9 +11,5 @@ build:
   config:
     RAILS_ENV: production
 
-release:
-  command:
-    - ./deployment-tasks.sh
-
 run:
   web: bundle exec puma -C config/puma.rb
