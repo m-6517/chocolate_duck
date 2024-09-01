@@ -1,6 +1,8 @@
 ja:
   defaults:
     flash_message:
+      created: "%{item}に登録しました"
+      not_created: "%{item}に登録できませんでした"
       require_login: ログインしてください
   helpers:
     submit:
@@ -34,3 +36,6 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+  boards:
+    new:
+      title: ずかん登録
