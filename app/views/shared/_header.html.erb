@@ -20,7 +20,7 @@
         </button>
       </div>
       <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-        <li><%= link_to t('header.board'), '#' %></li>
+        <li><%= link_to t('header.board'), boards_path %></li>
         <li><%= link_to current_user.decorate.name, '#' %></li>
         <li><%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete } %></li>
       </ul>
