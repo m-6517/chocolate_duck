@@ -1,0 +1,9 @@
+<div class="container mx-auto pt-3">
+  <div class="flex flex-wrap">
+    <% if @boards.present? %>
+        <%= render @boards %>
+    <% else %>
+        <div class="mb-3 text-center text-gray-500">ずかんが見つかりませんでした</div>
+    <% end %>
+  </div>
+</div>
