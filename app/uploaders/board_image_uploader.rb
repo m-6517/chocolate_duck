@@ -21,7 +21,7 @@ class BoardImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
   def default_url
-    'board_placeholder.png'
+    "board_placeholder.png"
   end
 
   # Process files as they are uploaded:
