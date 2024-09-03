@@ -1,0 +1,16 @@
+<div class="flex items-center justify-center p-5">
+  <div class="max-w-lg w-full mx-auto">
+    <h1 class="text-2xl font-bold mb-6"><%= t('.title') %></h1>
+    <%= form_with model: @board, class: "space-y-4" do |f| %>
+      <div>
+        <%= f.label :title, class: "block text-lg font-medium mb-1" %>
+        <%= f.text_field :title, class: "w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500" %>
+      </div>
+      <div>
+        <%= f.label :body, class: "block text-lg font-medium mb-1" %>
+        <%= f.text_field :body, class: "w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500", rows: 10 %>
+      </div>
+      <%= f.submit nil, class: "bg-yellow-900 hover:bg-yellow-800 text-white rounded px-4 py-2" %>
+    <% end %>
+  </div>
+</div>
