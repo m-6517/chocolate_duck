@@ -42,7 +42,7 @@ gem "rails-i18n"
 
 gem "draper"
 
-gem "rake", "~> 13.0.6"
+gem "rake", "~> 13.2.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
