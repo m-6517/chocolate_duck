@@ -15,9 +15,11 @@ release:
     - ./deployment-tasks.sh
   image: worker
 run:
-  web: bundle exec puma -C config/puma.rb
-  worker: python myworker.py
+  web:
+    command:
+      - bundle exec puma -C config/puma.rb
+    image: web
   asset-syncer:
     command:
-      - python asset-syncer.py
-    image: worker
+      - bundle exec rake assets:precompile
+    image: asset-syncer
