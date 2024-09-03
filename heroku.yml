@@ -18,8 +18,3 @@ run:
   web:
     command:
       - bundle exec puma -C config/puma.rb
-    image: web
-  asset-syncer:
-    command:
-      - bundle exec rake assets:precompile
-    image: asset-syncer
