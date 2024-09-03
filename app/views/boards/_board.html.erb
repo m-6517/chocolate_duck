@@ -2,7 +2,7 @@
   <div>
     <%= link_to '#', id: "board-id-#{board.id}" do %>
       <figure class="image-full">
-        <%= image_tag "board_placeholder.png", class: "w-32 h-32 object-contain rounded-md shadow-xl" %>
+        <%= image_tag board.board_image_url, class: "w-32 h-32 object-contain rounded-md shadow-xl" %>
       </figure>
     <% end %>
   </div>
