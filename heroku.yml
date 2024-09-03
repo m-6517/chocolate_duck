@@ -13,7 +13,6 @@ build:
 release:
   command:
     - ./deployment-tasks.sh
-  image: worker
 run:
   web:
     command:
