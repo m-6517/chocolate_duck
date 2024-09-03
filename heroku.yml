@@ -8,11 +8,8 @@ build:
   docker:
     web: Dockerfile
   config:
-    RAILS_ENV: development
+    RAILS_ENV: production
     FOO: bar
-release:
-  command:
-    - ./deployment-tasks.sh
 run:
   web:
     command:
