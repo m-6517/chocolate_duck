@@ -274,6 +274,7 @@
   },
   "repository": "heroku/cli",
   "scripts": {
+    "start": "bin/rails server -p $PORT -e production",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "build": "rm -rf lib && tsc",
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
@@ -283,6 +284,7 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "posttest": "yarn lint",
     "version": "oclif-dev readme --multi && git add README.md ../../docs"
+    "heroku-postbuild": "yarn run build:css && bundle exec rake assets:precompile"
   },
   "types": "lib/index.d.ts"
 }
