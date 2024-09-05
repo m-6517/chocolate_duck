@@ -4,12 +4,9 @@
   </div>
   <div class="flex flex-wrap">
     <% if @boards.present? %>
-      <%= render @boards %>
+        <%= render @boards %>
     <% else %>
-      <div class="mb-3 text-center text-gray-500">ずかんが見つかりませんでした</div>
+        <div class="mb-3 text-center text-gray-500">ずかんが見つかりませんでした</div>
     <% end %>
-  </div>
-  <div class="flex justify-center my-4">
-    <%= paginate @boards, theme: 'daisy' %>
   </div>
 </div>
