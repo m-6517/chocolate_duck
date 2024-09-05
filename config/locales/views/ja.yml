@@ -1,8 +1,14 @@
 ja:
   defaults:
+    create: 作成
+    post: 投稿
+    delete_confirm: 削除しますか？
     flash_message:
       created: "%{item}に登録しました"
       not_created: "%{item}に登録できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
       require_login: ログインしてください
   helpers:
     submit:
@@ -41,3 +47,5 @@ ja:
       title: ずかん登録
     show:
       title: ずかん詳細
+    edit:
+      title: ずかん編集
