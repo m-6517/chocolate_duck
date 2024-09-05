@@ -39,3 +39,5 @@ ja:
   boards:
     new:
       title: ずかん登録
+    show:
+      title: ずかん詳細
