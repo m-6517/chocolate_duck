@@ -1,7 +1,6 @@
 class BoardsController < ApplicationController
   def index
-    page_number = params[:page].to_i > 0 ? params[:page].to_i : 1
-    @boards = Board.includes(:user).order(created_at: :desc).page(page_number)
+    @boards = Board.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
