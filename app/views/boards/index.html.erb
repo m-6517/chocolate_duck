@@ -10,6 +10,6 @@
     <% end %>
   </div>
   <div class="flex justify-center my-4">
-    <%= paginate @boards, theme: 'daisy' %>
+    <%= render partial: 'pagination', locals: { paginator: @boards } %>
   </div>
 </div>
