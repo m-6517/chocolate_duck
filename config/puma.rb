@@ -32,3 +32,6 @@ plugin :tmp_restart
 # Specify the PID file. Defaults to tmp/pids/server.pid in development.
 # In other environments, only set the PID file if requested.
 pidfile ENV["PIDFILE"] if ENV["PIDFILE"]
+
+# Specifies the `environment` that Puma will run in.
+environment ENV.fetch("RAILS_ENV", "production")

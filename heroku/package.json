@@ -87,7 +87,7 @@
     "typescript": "3.7.5"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": "20.x"
   },
   "files": [
     "/oclif.manifest.json",
@@ -274,14 +274,17 @@
   },
   "repository": "heroku/cli",
   "scripts": {
+    "start": "bin/rails server -p $PORT -e production",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "build": "rm -rf lib && tsc",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
     "postpublish": "rm -f oclif.manifest.json",
     "prepack": "yarn run build && oclif-dev manifest",
     "pretest": "tsc -p test --noEmit",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "posttest": "yarn lint",
-    "version": "oclif-dev readme --multi && git add README.md ../../docs"
+    "version": "oclif-dev readme --multi && git add README.md ../../docs",
+    "heroku-postbuild": "yarn run build:css && bundle exec rake assets:precompile"
   },
   "types": "lib/index.d.ts"
 }
