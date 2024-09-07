@@ -30,4 +30,12 @@ module.exports = {
       },
     ],
   },
+
+  theme: {
+    extend: {
+      fontFamily: {
+        dotgothic16: ["DotGothic16", "sans-serif"],
+      },
+    },
+  },
 }
