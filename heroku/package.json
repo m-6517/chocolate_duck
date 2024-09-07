@@ -277,7 +277,7 @@
     "start": "bin/rails server -p $PORT -e production",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "build": "rm -rf lib && tsc",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.tailwind.css --minify",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
     "postpublish": "rm -f oclif.manifest.json",
     "prepack": "yarn run build && oclif-dev manifest",
     "pretest": "tsc -p test --noEmit",
