@@ -12,6 +12,7 @@ ja:
     post: 投稿
     edit: 編集
     delete_confirm: 削除しますか？
+    password_reset: パスワードリセット
     flash_message:
       created: "%{item}に登録しました"
       not_created: "%{item}に登録できませんでした"
@@ -55,3 +56,13 @@ ja:
       title: プロフィール
     edit:
       title: プロフィール編集
+  password_resets:
+    new:
+      title: パスワードリセット申請
+      submit: 送信
+    edit:
+      title: パスワードリセット
+    create:
+      success: パスワードリセット手順を送信しました
+    update:
+      success: パスワードを変更しました
