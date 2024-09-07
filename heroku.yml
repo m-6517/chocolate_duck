@@ -14,3 +14,4 @@ run:
   web:
     command:
       - bundle exec puma -C config/puma.rb
+      - bundle exec rails assets:precompile

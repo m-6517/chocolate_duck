@@ -44,3 +44,7 @@
 venv/node_modules
 
 /public/uploads
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
