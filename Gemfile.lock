@@ -117,6 +117,10 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     deep_merge (1.2.2)
+    dotenv (3.1.2)
+    dotenv-rails (3.1.2)
+      dotenv (= 3.1.2)
+      railties (>= 6.1)
     draper (4.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -421,6 +425,7 @@ DEPENDENCIES
   config
   cssbundling-rails
   debug
+  dotenv-rails
   draper
   fog-aws
   jbuilder
