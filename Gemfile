@@ -44,9 +44,13 @@ gem "draper"
 
 gem "carrierwave"
 
+gem "mini_magick"
+
+gem "aws-sdk-s3"
+
 gem "fog-aws"
 
-gem "mini_magick"
+gem "dotenv-rails"
 
 gem "kaminari"
 
