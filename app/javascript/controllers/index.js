@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import CursorController from "./cursor_controller"
+application.register("cursor", CursorController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
