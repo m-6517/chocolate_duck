@@ -45,6 +45,8 @@ ja:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
   boards:
+    index:
+      title: ずかん一覧
     new:
       title: ずかん登録
     show:
