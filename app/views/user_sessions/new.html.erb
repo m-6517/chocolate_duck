@@ -13,8 +13,11 @@
         <%= f.password_field :password, class: "grow" %>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex items-center gap-4">
         <%= f.submit t('.login'), class: "btn btn-primary" %>
+        <%= link_to auth_at_provider_path(provider: :google), data: { turbo: false } do %>
+          <%= image_tag "sign_in_with_google.png" %>
+        <% end %>
       </div>
     <% end %>
 
