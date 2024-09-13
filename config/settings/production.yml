@@ -1,2 +1,2 @@
 sorcery:
-  google_callback_url: 'https://choco-duck-8971701aea8b.herokuapp.com'
+  google_callback_url: 'https://choco-duck-8971701aea8b.herokuapp.com/oauth/callback?provider=google'
