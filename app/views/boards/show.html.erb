@@ -18,6 +18,18 @@
         <%= link_to '削除', board_path(@board), id: "button-delete-#{@board.id}", data: {turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm')}, class: "btn btn-primary" %>
       <% end %>
     </div>
+
+    <div class="text-gray-600">
+        <!-- 設定したメタタグをリダイレクトされる前に呼び出す -->
+      <% prepare_meta_tags @board %>
+        <!-- board_urlにしないと完全なURLにならない -->
+      <% twitter_share_url = "https://twitter.com/share?url= #{CGI.escape(board_url(@board))}" %>
+      <%= link_to twitter_share_url, target: "_blank", data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
+        <!-- Xシェアボタンはfontawesome.comから使用 -->
+        <i class="fa-brands fa-square-x-twitter fa-2xl"></i>
+      <% end %>
+    </div>
+
     <div class='text-center mb-4'>
       <%= link_to "ずかん一覧へ", boards_path %>
     </div>
