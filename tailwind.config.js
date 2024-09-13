@@ -34,7 +34,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        dotgothic16: ["DotGothic16", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
+        noto: ["Noto Sans JP", "sans-serif"],
       },
     },
   },
