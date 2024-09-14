@@ -19,13 +19,7 @@
       <% end %>
     </div>
 
-    <div class="text-gray-600">
-        <!-- 設定したメタタグをリダイレクトされる前に呼び出す -->
-      <% prepare_meta_tags @board %>
-        <!-- board_urlにしないと完全なURLにならない -->
-      <% twitter_share_url = "https://twitter.com/share?url= #{CGI.escape(board_url(@board))}" %>
       <%= link_to twitter_share_url, target: "_blank", data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
-        <!-- Xシェアボタンはfontawesome.comから使用 -->
         <i class="fa-brands fa-square-x-twitter fa-2xl"></i>
       <% end %>
     </div>
