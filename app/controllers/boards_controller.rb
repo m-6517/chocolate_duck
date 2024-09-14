@@ -1,5 +1,4 @@
 class BoardsController < ApplicationController
-
   def index
     @boards = Board.includes(:user).order(created_at: :desc)
   end
@@ -47,5 +46,4 @@ class BoardsController < ApplicationController
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
   end
-
 end
