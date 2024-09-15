@@ -36,9 +36,9 @@ class BoardDecorator < Draper::Decorator
 
   def color_classification(pixel)
     r, g, b = pixel
-    if (r > 90 && g < 80 && b < 80) || (r > 150 && g > 120 && b < 80)
+    if r > 90 && g < 80 && b < 80 || r > 150 && g > 120 && b < 80
       :brown
-    elsif (r > 200 && g > 200 && b < 100)
+    elsif r > 200 && g > 200 && b < 100
       :yellow
     else
       :none
