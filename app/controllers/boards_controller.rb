@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
+      color_percentages = @board.decorate.color_percentage
       redirect_to boards_path, success: t("defaults.flash_message.created", item: Board.model_name.human)
     else
       flash.now[:danger] = t("defaults.flash_message.not_created", item: Board.model_name.human)
@@ -19,6 +20,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @color_percentages = @board.decorate.color_percentage
   end
 
   def edit
