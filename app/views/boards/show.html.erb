@@ -17,7 +17,7 @@
         <%= link_to '編集', edit_board_path(@board), id: "button-edit-#{@board.id}", class: "btn btn-primary" %>
         <%= link_to '削除', board_path(@board), id: "button-delete-#{@board.id}", data: {turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm')}, class: "btn btn-primary" %>
       <% end %>
-      <%= link_to "https://twitter.com/intent/tweet?text=#{CGI.escape("ちゃいろときいろ ずかんに登録したよ！")}&url=#{CGI.escape(board_url(@board))}&hashtags=#{CGI.escape("CHOCOLATE_DUCK,RUNTEQ祭")}", target: "_blank" do %>
+      <%= link_to "https://twitter.com/intent/tweet?text=#{CGI.escape("ちゃいろときいろ ずかんに登録したよ！")}&hashtags=#{CGI.escape("CHOCOLATE_DUCK,RUNTEQ祭")}&url=#{CGI.escape(board_url(@board))}", target: "_blank" do %>
         <i class="fa-brands fa-square-x-twitter fa-2xl"></i>
       <% end %>
 
