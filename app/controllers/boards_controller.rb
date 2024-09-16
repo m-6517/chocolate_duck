@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  skip_before_action :require_login, only: [:index, :show]
+  skip_before_action :require_login, only: [ :index, :show ]
 
   def index
     @boards = Board.includes(:user).order(created_at: :desc)
