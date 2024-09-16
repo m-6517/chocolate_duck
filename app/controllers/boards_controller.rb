@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
+
   def index
     @boards = Board.includes(:user).order(created_at: :desc)
   end
@@ -20,7 +22,11 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @color_percentages = @board.decorate.color_percentage
+    if @board.board_image_url != "path/to/default/image.png"
+      @color_percentages = @board.decorate.color_percentage
+    else
+      @color_percentages = nil
+    end
   end
 
   def edit

@@ -1,30 +1,32 @@
 <% content_for(:title, @board.title) %>
 <div class="flex items-center justify-center m-12">
-  <div class="max-w-md w-full mx-auto bg-white p-6 rounded-lg shadow-lg font-noto">
+  <div class="max-w-md w-full mx-auto bg-white p-6 rounded-lg shadow-lg font-mplus_rounded_1c">
     <h1 class="text-2xl font-medium mb-4 text-center"><%= "#{@board.title}" %></h1>
     <div class='text-center mb-6'><%= "by #{@board.user.decorate.name}" %></div>
     <div class="w-full my-6">
       <%= image_tag @board.board_image_url, class: "object-contain w-32 h-32 mx-auto mb-6 rounded-md shadow-xl" %>
     </div>
-    <div class="flex justify-center mt-4 text-gray-700 gap-4">
-      <p>ちゃいろ度: <%= @color_percentages[:brown] %>%</p>
-      <p>きいろ度: <%= @color_percentages[:yellow] %>%</p>
-    </div>
+    <% if @color_percentages.present? %>
+      <div class="flex justify-center mt-4 text-gray-700 gap-4">
+        <p>ちゃいろ度: <%= @color_percentages[:brown] %>%</p>
+        <p>きいろ度: <%= @color_percentages[:yellow] %>%</p>
+      </div>
+    <% end %>
     <div class="text-center mt-4 text-gray-700">
       <%= simple_format(@board.body) %>
     </div>
-    <div class="text-right mt-4 text-gray-700">
-      <%= l @board.created_at, format: :long %>
-    </div>
-    <div class='text-center mt-6 mb-6'>
+    <div class='text-center mt-6 mb-6 flex items-center justify-center gap-4'>
       <% if logged_in? && current_user.own?(@board) %>
-        <%= link_to '編集', edit_board_path(@board), id: "button-edit-#{@board.id}", class: "btn btn-primary" %>
-        <%= link_to '削除', board_path(@board), id: "button-delete-#{@board.id}", data: {turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm')}, class: "btn btn-primary" %>
+        <%= link_to edit_board_path(@board), id: "button-edit-#{@board.id}", class: "p-2" do %>
+          <i class="fa-solid fa-pen-to-square fa-xl"></i>
+        <% end %>
+        <%= link_to board_path(@board), id: "button-delete-#{@board.id}", data: {turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm')}, class: "p-2" do %>
+          <i class="fa-regular fa-trash-can fa-xl"></i>
+        <% end %>
+      <%= link_to "https://twitter.com/intent/tweet?text=#{CGI.escape("ちゃいろときいろ ずかんに登録したよ！")}&hashtags=#{CGI.escape("CHOCOLATE_DUCK,RUNTEQ祭")}&url=#{CGI.escape(board_url(@board))}", target: "_blank", class: "p-2" do %>
+        <i class="fa-brands fa-square-x-twitter fa-xl"></i>
       <% end %>
-      <%= link_to "https://twitter.com/intent/tweet?text=#{CGI.escape("ちゃいろときいろ ずかんに登録したよ！")}&hashtags=#{CGI.escape("CHOCOLATE_DUCK,RUNTEQ祭")}&url=#{CGI.escape(board_url(@board))}", target: "_blank" do %>
-        <i class="fa-brands fa-square-x-twitter fa-2xl"></i>
       <% end %>
-
     </div>
     <div class='text-center mb-4'>
       <%= link_to "ずかん一覧へ", boards_path %>
