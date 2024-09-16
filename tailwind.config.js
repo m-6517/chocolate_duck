@@ -15,7 +15,8 @@ module.exports = {
           "secondary": "#D97904",
           "accent": "#F2B705",
           "neutral": "#733A19",
-          "base-100": "#F2F2F2",
+          "base-100": "#fefcbf",
+          // "base-100": "#F2F2F2",
 
           "--rounded-box": "1rem", // border radius rounded-box utility class, used in card and other large boxes
           "--rounded-btn": "0.5rem", // border radius rounded-btn utility class, used in buttons and similar element
@@ -35,7 +36,7 @@ module.exports = {
     extend: {
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],
-        noto: ["Noto Sans JP", "sans-serif"],
+        mplus_rounded_1c: ["M PLUS Rounded 1c", "sans-serif"],
       },
     },
   },

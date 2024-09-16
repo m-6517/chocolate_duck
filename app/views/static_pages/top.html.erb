@@ -1,4 +1,4 @@
-<div class="hero base-100 min-h-screen">
+<div class="hero bg-yellow-500 min-h-screen">
 
   <style>
     .hero {
@@ -10,13 +10,18 @@
     }
   </style>
   
-  <div class="hero-content text-center font-noto">
+  <div class="hero-content text-center font-mplus_rounded_1c">
     <div class="max-w-xl">
-      <h1 class="text-5xl font-bold mb-4">ちゃいろときいろ ずかん</h1>
-      <p class="py-6 mb-8">
-        チョコレート、アヒル… ちゃいろときいろのものを投稿してみよう！
+      <h1 class="text-5xl font-bold mb-8">
+        <span class="text-yellow-700">ちゃいろ</span>と<span class="text-yellow-400">きいろ</span> ずかん
+      </h1>
+      <p class="text-lg mt-6 mb-6">
+        チョコレート、アヒル…
       </p>
-      <%= link_to 'はじめる', boards_path, class: 'btn btn-primary mb-6 custom-cursor-link' %>
+      <p class="text-lg mb-16">
+        ちゃいろときいろのものをずかんに登録してみよう！
+      </p>
+      <%= link_to 'はじめる', boards_path, class: 'btn btn-primary mt-12 custom-cursor-link' %>
     </div>
   </div>
 </div>
