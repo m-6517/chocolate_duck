@@ -5,11 +5,11 @@
     <%= f.text_field :title, class: "w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500" %>
   </div>
   <div>
-    <%= f.label :body, class: "block text-lg font-medium mb-1" %>
+    <%= f.label :body, class: "block text-lg font-medium mb-2" %>
     <%= f.text_field :body, class: "w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500", rows: 10 %>
   </div>
   <div>
-    <%= f.file_field :board_image, class: "file-input file-input-bordered file-input-primary file-input-sm w-full max-w-xs", accept: 'image/*' %>
+    <%= f.file_field :board_image, class: "file-input file-input-bordered file-input-primary file-input-sm w-full max-w-xs mb-2", accept: 'image/*' %>
     <%= f.hidden_field :board_image_cache %>
   </div>
   <%= f.submit nil, class: "btn btn-primary" %>
