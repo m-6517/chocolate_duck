@@ -41,13 +41,13 @@
     <meta name="twitter:image" content="<%= asset_url('ogp.png') %>" />
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen">>
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
-    <div class="pt-16">
+    <div class="flex-grow pt-16">
       <%= render 'shared/flash_message' %>
       <%= yield %>
       <%= render 'shared/footer' %>
