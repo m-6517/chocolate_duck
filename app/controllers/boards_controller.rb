@@ -22,11 +22,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    if @board.board_image_url != "path/to/default/image.png"
-      @color_percentages = @board.decorate.color_percentage
-    else
-      @color_percentages = nil
-    end
+    @color_percentages = @board.decorate.color_percentage
   end
 
   def edit

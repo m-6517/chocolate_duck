@@ -6,11 +6,10 @@
     <div class="w-full my-6">
       <%= image_tag @board.board_image_url, class: "object-contain w-32 h-32 mx-auto mb-6 rounded-md shadow-xl" %>
     </div>
-    <% if @color_percentages.present? %>
-      <div class="flex justify-center mt-4 text-gray-700 gap-4">
-        <p>ちゃいろ度: <%= @color_percentages[:brown] %>%</p>
-        <p>きいろ度: <%= @color_percentages[:yellow] %>%</p>
-      </div>
+    <div class="flex justify-center mt-4 text-gray-700 gap-4">
+      <p>ちゃいろ度: <%= @color_percentages[:brown] %>%</p>
+      <p>きいろ度: <%= @color_percentages[:yellow] %>%</p>
+    </div>
     <% end %>
     <div class="text-center mt-4 text-gray-700">
       <%= simple_format(@board.body) %>
