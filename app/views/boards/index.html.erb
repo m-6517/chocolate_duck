@@ -1,7 +1,19 @@
 <% content_for(:title, t('.title')) %>
 <div class="container mx-auto pt-3 py-24">
-  <div class="flex items-center justify-center m-12 font-mplus_rounded_1c">
+  <div class="flex items-center justify-center gap-4 m-12">
     <%= link_to 'ずかん登録', new_board_path, class: "btn btn-primary" %>
+    <i class="fa-regular fa-circle-question text-xl cursor-pointer mb-0" onclick="document.getElementById('my_modal_1').showModal()"></i>
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box bg-slate-50">
+        <p class="py-4">画像はちゃいろだけ、きいろだけでもOK！</p>
+        <p class="py-4">ちゃいろ度・きいろ度を判定するつもりでしたが、表示されなくなったので準備中です！（今は0%で表示されます）</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">とじる</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
   </div>
   <div class="flex flex-wrap justify-center md:justify-start">
     <% if @boards.present? %>
