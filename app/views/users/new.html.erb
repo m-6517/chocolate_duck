@@ -1,36 +1,45 @@
 <% content_for(:title, t('.title')) %>
 <div class="flex items-center justify-center m-12">
-  <div class="max-w-md w-full mx-auto bg-slate-50 p-6 rounded-lg shadow-lg">
+  <div class="max-w-md w-full bg-slate-50 p-6 rounded-lg shadow-lg">
     <h1 class="text-2xl font-medium mb-6 text-center font-mplus_rounded_1c"><%= t('.title') %></h1>
     <%= form_with model: @user, class: "space-y-4 font-mplus_rounded_1c" do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-      <div class="input input-bordered flex flex-row items-center gap-2 w-full bg-slate-50">
-        <%= f.label :name, class: "text-left whitespace-nowrap pr-2" %>
-        <%= f.text_field :name, class: "grow" %>
-      </div>
-
-      <div class="input input-bordered flex flex-row items-center gap-2 w-full bg-slate-50">
-        <%= f.label :email, class: "text-left whitespace-nowrap pr-2" %>
-        <%= f.email_field :email, class: "grow" %>
-      </div>
-
-      <div class="input input-bordered flex flex-row items-center gap-2 w-full bg-slate-50">
-        <%= f.label :password, class: "text-left whitespace-nowrap pr-2" %>
-        <%= f.password_field :password, class: "grow" %>
-      </div>
-
-      <div class="input input-bordered flex flex-row items-center gap-2 w-full bg-slate-50">
-        <%= f.label :password_confirmation, class: "text-left whitespace-nowrap pr-2" %>
-        <%= f.password_field :password_confirmation, class: "grow" %>
-      </div>
-
+      <%= render 'shared/error_messages', object: f.object %>
+      
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">アカウント名</span>
+        </div>
+        <%= f.text_field :name, class: "input input-bordered w-full bg-slate-50" %>
+      </label>
+      
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">メールアドレス</span>
+        </div>
+        <%= f.text_field :email, class: "input input-bordered w-full bg-slate-50" %>
+      </label>
+      
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">パスワード</span>
+        </div>
+        <%= f.text_field :password, class: "input input-bordered w-full bg-slate-50" %>
+      </label>
+      
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">パスワード（確認）</span>
+        </div>
+        <%= f.text_field :password_confirmation, class: "input input-bordered w-full bg-slate-50" %>
+      </label>
+      
       <div class="flex justify-end">
         <%= f.submit "登録", class: "btn btn-primary" %>
       </div>
     <% end %>
+    
     <div class="text-center mt-4">
       <%= link_to t('.to_login_page'), login_path, class: "text-gray-700" %>
     </div>
   </div>
 </div>
-
