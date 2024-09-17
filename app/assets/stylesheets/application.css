@@ -1,0 +1,12 @@
+.background-image{
+  background-image: url(background.png);
+  background-size:cover;
+}
+
+.hero {
+  cursor: url('/assets/cursor-default.png'), auto;
+}
+
+.hero .custom-cursor-link:hover {
+  cursor: url('/assets/cursor-hover.png'), auto;
+}
