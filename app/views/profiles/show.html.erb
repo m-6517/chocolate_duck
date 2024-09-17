@@ -4,12 +4,12 @@
     <div class="space-y-6 font-mplus_rounded_1c">
       <label class="form-control w-full space-y-1">
       <div class="label">
-        <span class="label-text font-medium text-gray-700">
+        <span class="label-text font-medium text-gray-700 text-lg">
           <%= User.human_attribute_name(:name) %>
         </span>
       </div>
       <div class="label">
-        <span class="label-text-alt text-gray-900">
+        <span class="label-text-alt text-gray-900 text-lg">
           <%= current_user.decorate.name %>
         </span>
       </div>
@@ -17,12 +17,12 @@
 
       <label class="form-control w-full">
         <div class="label mt-6">
-          <span class="label-text font-medium text-gray-700">
+          <span class="label-text font-medium text-gray-700 text-lg">
             <%= User.human_attribute_name(:email) %>
           </span>
         </div>
         <div class="label">
-          <span class="label-text-alt text-gray-900">
+          <span class="label-text-alt text-gray-900 text-lg">
             <%= current_user.email %>
           </span>
         </div>

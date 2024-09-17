@@ -3,15 +3,19 @@
   <div class="max-w-md w-full mx-auto bg-slate-50 p-6 rounded-lg shadow-lg">
     <h1 class="text-2xl font-medium mb-6 text-center font-mplus_rounded_1c"><%= t('.title') %></h1>
     <%= form_with url: login_path, class: "space-y-4 font-mplus_rounded_1c" do |f| %>
-      <div class="input input-bordered flex flex-row items-center gap-2 w-full bg-slate-50">
-        <%= f.label :email, class: "text-left whitespace-nowrap pr-2" %>
-        <%= f.email_field :email, class: "w-full grow" %>
-      </div>
-
-      <div class="input input-bordered flex flex-row items-center gap-2 w-full bg-slate-50">
-        <%= f.label :password, class: "text-left whitespace-nowrap pr-2" %>
-        <%= f.password_field :password, class: "w-full grow" %>
-      </div>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">メールアドレス</span>
+        </div>
+        <%= f.text_field :email, class: "input input-bordered w-full bg-slate-50" %>
+      </label>
+      
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">パスワード</span>
+        </div>
+        <%= f.text_field :password, class: "input input-bordered w-full bg-slate-50" %>
+      </label>
 
       <div class="flex items-center gap-4">
         <%= f.submit t('.login'), class: "btn btn-primary" %>
