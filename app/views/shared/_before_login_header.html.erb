@@ -2,7 +2,18 @@
   <div class="flex-1">
     <%= link_to 'CHOCOLATE DUCK', '/', class: 'btn btn-ghost text-xl text-accent' %>
   </div>
-  <div class="flex-none">
+  <div class="hidden md:flex space-x-4">
+    <ul class="list-none flex space-x-4 font-mplus_rounded_1c font-semibold">
+      <li>
+        <%= link_to t('header.signup'), new_user_path, class: "text-accent" %>
+      </li>
+      <li>
+        <%= link_to t('header.login'), login_path, class: "text-accent" %>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex-none md:hidden">
     <div class="dropdown dropdown-hover dropdown-end">
       <div tabindex="0" role="button">
         <button class="btn btn-square btn-ghost">

@@ -2,15 +2,17 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div>
     <%= f.label :title, class: "block text-lg font-medium mb-1" %>
-    <%= f.text_field :title, class: "w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500" %>
+    <%= f.text_field :title, class: "w-full border border-gray-300 bg-slate-50 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500" %>
   </div>
   <div>
     <%= f.label :body, class: "block text-lg font-medium mb-2" %>
-    <%= f.text_field :body, class: "w-full border border-gray-300 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500", rows: 10 %>
+    <%= f.text_field :body, class: "w-full border border-gray-300 bg-slate-50 rounded-md shadow-sm px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500", rows: 10 %>
   </div>
   <div>
     <%= f.file_field :board_image, class: "file-input file-input-bordered file-input-primary file-input-sm w-full max-w-xs mt-4 mb-4", accept: 'image/*' %>
     <%= f.hidden_field :board_image_cache %>
   </div>
-  <%= f.submit nil, class: "btn btn-primary" %>
+  <div class="flex mt-4 justify-end">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
 <% end %>
