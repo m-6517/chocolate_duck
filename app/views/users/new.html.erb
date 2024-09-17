@@ -4,22 +4,22 @@
     <h1 class="text-2xl font-medium mb-6 text-center font-mplus_rounded_1c"><%= t('.title') %></h1>
     <%= form_with model: @user, class: "space-y-4 font-mplus_rounded_1c" do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-      <div class="input input-bordered flex items-center gap-2 w-full bg-slate-50">
+      <div class="input input-bordered flex flex-col md:flex-row items-center gap-2 w-full bg-slate-50">
         <%= f.label :name, class: "w-1/3 text-left" %>
         <%= f.text_field :name, class: "grow" %>
       </div>
 
-      <div class="input input-bordered flex items-center gap-2 w-full bg-slate-50">
+      <div class="input input-bordered flex flex-col md:flex-row items-center gap-2 w-full bg-slate-50">
         <%= f.label :email, class: "w-1/3 text-left" %>
         <%= f.email_field :email, class: "grow" %>
       </div>
 
-      <div class="input input-bordered flex items-center gap-2 w-full bg-slate-50">
+      <div class="input input-bordered flex flex-col md:flex-row items-center gap-2 w-full bg-slate-50">
         <%= f.label :password, class: "w-1/3 text-left" %>
         <%= f.password_field :password, class: "grow" %>
       </div>
 
-      <div class="input input-bordered flex items-center gap-2 w-full bg-slate-50">
+      <div class="input input-bordered flex flex-col md:flex-row items-center gap-2 w-full bg-slate-50">
         <%= f.label :password_confirmation, class: "w-1/3 text-left" %>
         <%= f.password_field :password_confirmation, class: "grow" %>
       </div>

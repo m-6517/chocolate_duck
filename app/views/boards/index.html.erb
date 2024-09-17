@@ -3,7 +3,7 @@
   <div class="flex items-center justify-center m-12 font-mplus_rounded_1c">
     <%= link_to 'ずかん登録', new_board_path, class: "btn btn-primary" %>
   </div>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap md:justify-center">
     <% if @boards.present? %>
       <%= render @boards %>
     <% else %>
