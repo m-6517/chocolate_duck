@@ -20,7 +20,7 @@ class OauthsController < ApplicationController
         # ユーザーが存在しない場合はプロバイダ情報を元に新規ユーザーを作成し、ログイン
         signup_and_login(provider)
         flash[:success] = "#{provider.titleize}アカウントでログインしました"
-        redirect_to home_path
+        redirect_to root_path
       rescue StandardError
         flash[:danger] = "#{provider.titleize}アカウントでのログインに失敗しました"
         redirect_to login_path
