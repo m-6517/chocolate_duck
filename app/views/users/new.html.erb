@@ -32,13 +32,17 @@
         </div>
         <%= f.text_field :password_confirmation, class: "input input-bordered w-full bg-slate-50" %>
       </label>
-      
-      <div class="flex justify-end">
+
+      <div class="flex items-center justify-center gap-4">
         <%= f.submit "登録", class: "btn btn-primary" %>
+        <p>または</p>
+        <%= link_to auth_at_provider_path(provider: :google), data: { turbo: false } do %>
+          <%= image_tag "sign_in_with_google.png" %>
+        <% end %>
       </div>
     <% end %>
     
-    <div class="text-center mt-4">
+    <div class="text-center mt-6">
       <%= link_to t('.to_login_page'), login_path, class: "text-gray-700" %>
     </div>
   </div>

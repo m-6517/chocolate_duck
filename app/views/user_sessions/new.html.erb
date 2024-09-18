@@ -17,15 +17,16 @@
         <%= f.text_field :password, class: "input input-bordered w-full bg-slate-50" %>
       </label>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center justify-center gap-4">
         <%= f.submit t('.login'), class: "btn btn-primary" %>
+        <p>または</p>
         <%= link_to auth_at_provider_path(provider: :google), data: { turbo: false } do %>
           <%= image_tag "sign_in_with_google.png" %>
         <% end %>
       </div>
     <% end %>
 
-    <div class="text-center mt-4">
+    <div class="text-center mt-6">
       <%= link_to t('.password_forget'), new_password_reset_path, class: "text-gray-700" %>
     </div>
   </div>
