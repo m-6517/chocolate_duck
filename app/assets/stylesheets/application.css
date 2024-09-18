@@ -2,11 +2,3 @@
   background-image: url(background.webp);
   background-size:cover;
 }
-
-.hero {
-  cursor: url('/assets/cursor-default.png'), auto;
-}
-
-.hero .custom-cursor-link:hover {
-  cursor: url('/assets/cursor-hover.png'), auto;
-}
