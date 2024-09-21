@@ -27,14 +27,16 @@ class BoardDecorator < Draper::Decorator
       end
     end
 
-    brown_percentage = (brown_count.to_f / total_count * 100).round(1)
-    yellow_percentage = (yellow_count.to_f / total_count * 100).round(1)
+    # 強調して出力するために倍数をかける
+    brown_percentage = (brown_count.to_f / total_count * 120).round(1) # 120%で計算
+    yellow_percentage = (yellow_count.to_f / total_count * 120).round(1) # 120%で計算
 
+    # 合計が100を超えないようにスケーリング
     total_percentage = brown_percentage + yellow_percentage
     if total_percentage > 100
       scale = 100.0 / total_percentage
-      brown_percentage *= scale
-      yellow_percentage *= scale
+      brown_percentage = (brown_percentage * scale).round(1)
+      yellow_percentage = (yellow_percentage * scale).round(1)
     end
 
     {
@@ -45,12 +47,49 @@ class BoardDecorator < Draper::Decorator
 
   protected
 
+  # RGB to HSV conversion
+  def rgb_to_hsv(r, g, b)
+    r = r / 255.0
+    g = g / 255.0
+    b = b / 255.0
+
+    max = [r, g, b].max
+    min = [r, g, b].min
+    delta = max - min
+
+    # Hue calculation
+    h = if delta == 0
+          0
+        elsif max == r
+          60 * (((g - b) / delta) % 6)
+        elsif max == g
+          60 * (((b - r) / delta) + 2)
+        else
+          60 * (((r - g) / delta) + 4)
+        end
+
+    h += 360 if h < 0 # Hue should be in the range [0, 360]
+
+    # Saturation calculation
+    s = max == 0 ? 0 : delta / max
+
+    # Value calculation
+    v = max
+
+    [h, s, v]
+  end
+
+  # Color classification based on HSV values
   def color_classification(pixel)
     r, g, b = pixel
-    if r > 90 && g < 80 && b < 80 || r > 150 && g > 120 && b < 80
-      :brown
-    elsif r > 200 && g > 200 && b < 100
+    h, s, v = rgb_to_hsv(r, g, b)
+
+    # Yellow classification (Hue around 30-50, high saturation and value)
+    if h.between?(30, 50) && s > 0.5 && v > 0.5
       :yellow
+    # Brown classification (Hue around 20-30, moderate saturation and lower value)
+    elsif h.between?(20, 30) && s > 0.4 && v < 0.6
+      :brown
     else
       :none
     end
