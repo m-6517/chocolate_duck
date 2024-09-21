@@ -1,7 +1,9 @@
-<div class="bg-neutral fixed top-0 z-50 flex h-16 w-full justify-center bg-opacity-90">
+<div class="bg-secondary fixed top-0 z-50 flex h-16 w-full justify-center bg-opacity-90">
   <nav class="navbar w-full">
     <div class="flex flex-1">
-      <%= link_to 'CHOCOLATE DUCK', '/', class: 'btn btn-ghost font-nunito text-xl text-accent' %>
+      <%= link_to "/", class: "flex items-center" do %>
+        <%= image_tag "logo.png", alt: "Logo", class: "h-4 ml-4" %>
+      <% end %>
     </div>
     <div class="flex-none">
       <div class="dropdown dropdown-hover dropdown-end">
@@ -11,7 +13,7 @@
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block h-5 w-5 stroke-accent">
+              class="inline-block h-5 w-5 stroke-neutral">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -20,7 +22,7 @@
             </svg>
           </button>
         </div>
-        <ul tabindex="0" class="dropdown-content menu bg-slate-50 rounded-box z-[1] w-52 p-2 shadow">
+        <ul tabindex="0" class="dropdown-content menu bg-slate-50 text-neutral rounded-box z-[1] w-52 p-2 shadow">
           <li><%= link_to t('header.board'), boards_path %></li>
           <li><%= link_to current_user.decorate.name, profile_path %></li>
           <li><%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete } %></li>
