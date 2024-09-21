@@ -1,0 +1,7 @@
+body {
+  cursor: url('<%= asset_path 'cursor-default.png' %>'), auto;
+}
+
+.custom-cursor-link:hover {
+  cursor: url('<%= asset_path 'cursor-hover.png' %>'), auto;
+}
