@@ -32,8 +32,6 @@ class BoardDecorator < Draper::Decorator
     }
   end
 
-  private
-
   def color_classification(pixel)
     r, g, b = pixel
     if r > 90 && g < 80 && b < 80 || r > 150 && g > 120 && b < 80
