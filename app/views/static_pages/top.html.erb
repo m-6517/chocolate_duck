@@ -1,6 +1,17 @@
 <div
   class="hero min-h-screen"
   style="background-image: url('<%= asset_path 'background.webp' %>');">
+
+  <style>
+    .hero {
+      cursor: url('<%= asset_path('cursor-default.png') %>'), auto;
+    }
+
+    .hero .custom-cursor-link:hover {
+      cursor: url('<%= asset_path('cursor-hover.png') %>'), auto;
+    }
+  </style>
+
   <div class="hero-content text-center">
     <div class="max-w-xl">
       <h1 class="lg:text-5xl text-2xl font-bold mb-8">
