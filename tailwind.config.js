@@ -31,12 +31,4 @@ module.exports = {
       },
     ],
   },
-
-  theme: {
-    extend: {
-      fontFamily: {
-        mplus_rounded_1c: ["M PLUS Rounded 1c", "system-ui"],
-      },
-    },
-  },
 }

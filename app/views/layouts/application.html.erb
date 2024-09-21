@@ -9,11 +9,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
-    <script src="https://kit.fontawesome.com/f242c6364d.js" crossorigin="anonymous"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/f242c6364d.js" crossorigin="anonymous"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-10JZ3632YG"></script>
@@ -42,7 +42,7 @@
     <meta name="twitter:image" content="<%= asset_url('ogp.png') %>" />
   </head>
 
-  <body class="flex flex-col min-h-screen font-mplus_rounded_1c font-normal">
+  <body class="flex flex-col min-h-screen m-plus-rounded-1c-regular">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
