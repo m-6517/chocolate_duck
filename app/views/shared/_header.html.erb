@@ -5,7 +5,21 @@
         <%= image_tag "logo.png", alt: "Logo", class: "h-4 ml-4" %>
       <% end %>
     </div>
-    <div class="flex-none">
+    <div class="hidden md:flex space-x-4 mr-4 font-semibold">
+      <ul class="list-none flex space-x-4">
+        <li>
+          <%= link_to t('header.board'), boards_path, class: "text-neutral" %>
+        </li>
+        <li>
+          <%= link_to t('header.profile'), profile_path, class: "text-neutral" %>
+        </li>
+        <li>
+          <%= link_to t('header.logout'), logout_path, data: { turbo_method: :delete }, class: "text-neutral" %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex-none md:hidden">
       <div class="dropdown dropdown-hover dropdown-end">
         <div tabindex="0" role="button">
           <button class="btn btn-square btn-ghost">
