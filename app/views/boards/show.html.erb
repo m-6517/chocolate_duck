@@ -4,7 +4,7 @@
     <div class="text-2xl text-center mb-4"><%= "#{@board.title}" %></div>
     <div class="text-center mb-6"><%= "by #{@board.user.decorate.name}" %></div>
     <div class="w-full mt-12 my-12">
-      <%= image_tag @board.board_image_url, class: "object-contain w-32 h-32 mx-auto rounded-md shadow-xl" %>
+      <%= image_tag @board.board_image_url, class: "object-contain w-52 h-52 mx-auto rounded-md shadow-xl" %>
     </div>
     <div class="text-center mt-6 text-gray-700">
       <%= simple_format(@board.body) %>

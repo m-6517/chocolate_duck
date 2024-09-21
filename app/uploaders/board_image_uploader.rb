@@ -33,7 +33,7 @@ class BoardImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-  # process resize_to_fit: [ 150, 150 ]
+  process resize_to_fit: [ 400, 400 ]
 
   # Create different versions of your uploaded files:
   # version :thumb do
@@ -54,4 +54,16 @@ class BoardImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg"
   # end
+  process :convert_to_webp
+
+  def convert_to_webp
+    manipulate! do |img|
+      img.format 'webp'
+      img
+    end
+  end
+
+  def filename
+    super.chomp(File.extname(super)) + '.webp' if original_filename.present?
+  end
 end
