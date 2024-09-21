@@ -3,7 +3,7 @@
     <div class="flex flex-1">
       <%= link_to 'CHOCOLATE DUCK', '/', class: 'btn btn-ghost font-nunito text-xl text-accent' %>
     </div>
-    <div class="hidden md:flex space-x-4 mr-4 font-mplus_rounded_1c font-semibold">
+    <div class="hidden md:flex space-x-4 mr-4 font-semibold">
       <ul class="list-none flex space-x-4">
         <li>
           <%= link_to t('header.signup'), new_user_path, class: "text-accent" %>
@@ -31,7 +31,7 @@
             </svg>
           </button>
         </div>
-        <ul tabindex="0" class="dropdown-content menu bg-slate-50 rounded-box z-[1] w-52 p-2 shadow font-mplus_rounded_1c">
+        <ul tabindex="0" class="dropdown-content menu bg-slate-50 rounded-box z-[1] w-52 p-2 shadow">
           <li><%= link_to t('header.signup'), new_user_path %></li>
           <li><%= link_to t('header.login'), login_path %></li>
         </ul>
