@@ -28,8 +28,8 @@ class BoardDecorator < Draper::Decorator
     end
 
     # 強調して出力するために倍数をかける
-    brown_percentage = (brown_count.to_f / total_count * 120).round(1) # 120%で計算
-    yellow_percentage = (yellow_count.to_f / total_count * 120).round(1) # 120%で計算
+    brown_percentage = (brown_count.to_f / total_count * 200).round(1)
+    yellow_percentage = (yellow_count.to_f / total_count * 200).round(1)
 
     # 合計が100を超えないようにスケーリング
     total_percentage = brown_percentage + yellow_percentage
@@ -53,20 +53,20 @@ class BoardDecorator < Draper::Decorator
     g = g / 255.0
     b = b / 255.0
 
-    max = [r, g, b].max
-    min = [r, g, b].min
+    max = [ r, g, b ].max
+    min = [ r, g, b ].min
     delta = max - min
 
     # Hue calculation
     h = if delta == 0
-          0
-        elsif max == r
-          60 * (((g - b) / delta) % 6)
-        elsif max == g
-          60 * (((b - r) / delta) + 2)
-        else
-          60 * (((r - g) / delta) + 4)
-        end
+      0
+    elsif max == r
+      60 * (((g - b) / delta) % 6)
+    elsif max == g
+      60 * (((b - r) / delta) + 2)
+    else
+      60 * (((r - g) / delta) + 4)
+    end
 
     h += 360 if h < 0 # Hue should be in the range [0, 360]
 
@@ -76,7 +76,7 @@ class BoardDecorator < Draper::Decorator
     # Value calculation
     v = max
 
-    [h, s, v]
+    [ h, s, v ]
   end
 
   # Color classification based on HSV values
