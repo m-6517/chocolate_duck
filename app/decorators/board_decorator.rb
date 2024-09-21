@@ -5,7 +5,8 @@ class BoardDecorator < Draper::Decorator
     return { brown: 0, yellow: 0 } unless object.board_image.present?
 
     begin
-      img = MiniMagick::Image.open(object.board_image.url)
+      img_path = Rails.env.development? ? object.board_image.path : object.board_image.url
+      img = MiniMagick::Image.open(img_path)
     rescue => e
       Rails.logger.error("Image processing failed: #{e.message}")
       return { brown: 0, yellow: 0 }
@@ -26,11 +27,23 @@ class BoardDecorator < Draper::Decorator
       end
     end
 
+    brown_percentage = (brown_count.to_f / total_count * 100).round(1)
+    yellow_percentage = (yellow_count.to_f / total_count * 100).round(1)
+
+    total_percentage = brown_percentage + yellow_percentage
+    if total_percentage > 100
+      scale = 100.0 / total_percentage
+      brown_percentage *= scale
+      yellow_percentage *= scale
+    end
+
     {
-      brown: (brown_count.to_f / total_count * 100).round(1),
-      yellow: (yellow_count.to_f / total_count * 100).round(1)
+      brown: brown_percentage,
+      yellow: yellow_percentage
     }
   end
+
+  protected
 
   def color_classification(pixel)
     r, g, b = pixel
