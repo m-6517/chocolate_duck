@@ -35,8 +35,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: ["Nunito", "sans-serif"],
-        mplus_rounded_1c: ["M PLUS Rounded 1c", "sans-serif"],
+        mplus_rounded_1c: ["M PLUS Rounded 1c", "system-ui"],
       },
     },
   },
