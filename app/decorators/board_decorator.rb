@@ -5,7 +5,7 @@ class BoardDecorator < Draper::Decorator
     return { brown: 0, yellow: 0 } unless object.board_image.present?
 
     begin
-      img = MiniMagick::Image.open(object.board_image.path)
+      img = MiniMagick::Image.open(object.board_image.url)
     rescue => e
       Rails.logger.error("Image processing failed: #{e.message}")
       return { brown: 0, yellow: 0 }
